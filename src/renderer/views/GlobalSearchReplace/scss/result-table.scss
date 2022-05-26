@@ -1,0 +1,15 @@
+.result-table{
+  &:deep(.search-text){
+    color: #66b1ff;
+    margin: 0 5px;
+  }
+  &:deep(.through-search-text){
+    color: #bb0202;
+    text-decoration: line-through;
+    margin: 0 5px;
+  }
+  &:deep(.replace-txt){
+    color: #66b1ff;
+    margin-right: 0 5px;
+  }
+}

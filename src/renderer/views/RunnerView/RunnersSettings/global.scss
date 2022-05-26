@@ -1,0 +1,39 @@
+.pane-content {
+  padding: 20px 0;
+}
+
+.preview.pane-content {
+  overflow-y: scroll;
+}
+
+#side-content-title {
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+.form-item {
+  &:deep(.el-form-item__content) {
+    display: flex;
+  }
+  &:deep(.el-select) {
+    padding-right: 10px;
+    flex: 1;
+  }
+  &:deep(.el-button) {
+    flex: 0;
+  }
+}
+
+.preview-item {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  padding-left: 20px;
+  margin-bottom: 20px;
+
+  .label {
+    font-weight: 500;
+  }
+  .value {
+    margin-top: 6px;
+  }
+}

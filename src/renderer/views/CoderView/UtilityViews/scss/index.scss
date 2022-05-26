@@ -1,0 +1,30 @@
+.top-box{
+  display: flex;
+  width: 100%;
+  .tabs-box{
+    flex: 1;
+    width: 0;
+    box-shadow: none;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    &:deep(.el-tabs__content){
+      padding: 0;
+    }
+  }
+  .icon-box{
+    display: flex;
+    height: 40px;
+    background: #f5f7fa;
+    border-bottom: 1px solid #e4e7ed;
+    border-top: 1px solid #e4e7ed;
+    justify-content: center;
+    align-items: center;
+    i{
+      margin-left: 10px;
+    }
+    i:last-child{
+      margin-right: 10px;
+    }
+  }
+}

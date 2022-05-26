@@ -1,0 +1,61 @@
+ul{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  line-height: 30px;
+  margin: 0;
+  padding: 0;
+  li{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding-right: 20px;
+    cursor: pointer;
+    span.block-name{
+      display: inline-block;
+      width: 100%;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      user-select: none;
+    }
+    span.search-text{
+      background: #66b1ff;
+    }
+    span.through-search-text{
+      text-decoration: line-through;
+    }
+    i{
+      margin-right: 3px;
+    }
+    .active{
+      transform: rotate(270deg);
+    }
+    .path{
+      color: #b1b1b1;
+    }
+  }
+  li:last-child{
+    padding-left: 41px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    span{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    span:first-child{
+      max-width: 50%;
+    }
+  }
+  li:hover{
+    background: #ececec;
+  }
+  li.activeFormula{
+    background: #ececec;
+    span.search-text{
+      color:#fff;
+    }
+  }
+}

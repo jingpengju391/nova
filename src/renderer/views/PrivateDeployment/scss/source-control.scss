@@ -1,0 +1,23 @@
+.control-box{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 5px 15px;
+  border-bottom: 1px solid #e8e8e8;
+  justify-content: flex-end;
+  .control-title {
+    margin-right: auto;
+  }
+  .control-btn{
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .control-btn:hover{
+    color: #66b1ff;
+  }
+  .more-box{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+}

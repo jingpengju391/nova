@@ -1,0 +1,1 @@
+-w -std=c++20 -m64 -O3 -fexec-charset=gbk -DNDEBUG -Wl,--stack=8388608

@@ -1,0 +1,15 @@
+.table-box{
+  height: 100%;
+  --el-table-border-color:transparent;
+  --el-border-color-lighter:#d0d0d0;
+  // width: fit-content;
+  width: 100%;
+  .rlue-style{
+    &:deep(.el-input__inner){
+      border-color: #dc7a7a;
+    }
+  }
+  &:deep(.cell){
+    line-height: 32px;
+  }
+}

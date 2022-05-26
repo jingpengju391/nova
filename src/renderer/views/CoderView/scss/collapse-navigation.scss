@@ -1,0 +1,24 @@
+
+.collapse-box{
+  height: 100%;
+  .collapse-navigation{
+    height: 100%;
+    border-left: 1px solid lightgray;
+    &:deep(.el-collapse-item__header){
+      background-color: #f4f6fa;
+      margin-bottom: 2px;
+    }
+    &:deep(.el-collapse-item__content){
+      padding-bottom: 0;
+    }
+    &:deep(.el-collapse-item__header){
+      padding-bottom: 0;
+      height: 40px;
+      line-height: 40px;
+    }
+    .iconfont{
+      margin: 0 10px;
+      color: #66b1ff;
+    }
+  }
+}

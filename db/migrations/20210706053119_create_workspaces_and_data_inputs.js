@@ -1,0 +1,70 @@
+
+exports.up = function(knex) {
+  return knex.schema
+    .createTable('workspaces', table => {
+      table.increments('id').primary()
+      table.string('name')
+    })
+    .createTable('data_inputs', table => {
+      table.increments('id').primary()
+      table.timestamps(false, true)
+      table.string('name')
+      table.string('path')
+      table.integer('workspaceId')
+      table.integer('modelId')
+      table.integer('blockId')
+      table.boolean('isRelative')
+      table.string('blockKey')
+      table.string('blockVal')
+      table.foreign('workspaceId').references('workspaces.id').onDelete('CASCADE')
+      table.foreign('modelId').references('models.id').onDelete('CASCADE')
+    })
+    .createTable('assumption_page', table => {
+      table.increments('id').primary()
+      table.timestamps(false, true)
+      table.string('name')
+      table.integer('modelId')
+      table.boolean('child')
+      table.integer('status')
+      table.integer('workspaceId')
+      table.foreign('workspaceId').references('workspaces.id').onDelete('CASCADE')
+      table.foreign('modelId').references('models.id').onDelete('CASCADE')
+    })
+    .createTable('variable_inputs', table => {
+      table.increments('id').primary()
+      table.timestamps(false, true)
+      table.string('name')
+      table.string('type')
+      table.string('describe')
+      table.string('source')
+      table.string('sectionKey')
+      table.string('sectionVal')
+      table.integer('pageId')
+      table.integer('modelId')
+      table.integer('workspaceId')
+      table.foreign('workspaceId').references('workspaces.id').onDelete('CASCADE')
+      // table.foreign('pageId').references('assumption_page.id').onDelete('CASCADE')
+    })
+    .createTable('section_inputs', table => {
+      table.increments('id').primary()
+      table.timestamps(false, true)
+      table.string('value')
+      table.string('label')
+      table.integer('modelId')
+      table.integer('pageId')
+      table.boolean('status')
+      table.integer('sort')
+      table.integer('workspaceId')
+      table.foreign('workspaceId').references('workspaces.id').onDelete('CASCADE')
+      // table.foreign('variableId').references('variable_inputs.id').onDelete('CASCADE')
+    })
+}
+
+exports.down = function(knex) {
+  return knex.schema
+    .dropTable('data_inputs')
+    .dropTable('workspaces')
+    .dropTable('assumption_page')
+    .dropTable('variable_inputs')
+    .dropTable('section_inputs')
+}

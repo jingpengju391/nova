@@ -1,0 +1,162 @@
+# MAIN.O
+TEMP_OBJ := Main
+TEMP_DIR := jinShaJiang/Model
+MAIN_C := $(TEMP_DIR)/$(TEMP_OBJ).cpp
+MAIN_O :=  $(patsubst $(TEMP_DIR)%.cpp, $(RELEASE_FOLDER)%.o,$(MAIN_C))
+MAIN_D :=  $(patsubst $(TEMP_DIR)%.cpp, $(RELEASE_FOLDER)%.d,$(MAIN_C))
+# MAIN_D_SEQ := $(file < $(MAIN_D))
+# MAIN_D_FILE := $(wildcard $(RELEASE_FOLDER)/$(TEMP_OBJ).d)
+# MAIN_D_SEQ := $(foreach n,$(MAIN_D_FILE),$(file < $(n)))
+# MAIN_D_SEQ :=$(filter %.hpp ,$(MAIN_D_SEQ))
+
+$(MAIN_O) : $(MAIN_C) $(MAIN_D) $(MAIN_D_SEQ)
+	@echo compiling... $@
+	@<%= path.cxxPath %> $(CPP_FLAG) -c $< -o $@ $(CORE_INCLUDE_PATH) $(MODEL_INCLUDE_PATH)
+
+$(MAIN_D) : $(MAIN_C)
+	@<%= path.cxxPath %> -MM  $^ > $@ $(CORE_INCLUDE_PATH) $(MODEL_INCLUDE_PATH)
+
+
+MAIN_OBJ := $(MAIN_O)
+make_model: $(MODEL_OBJ)
+	@echo $(MAIN_D_FILE)
+	@echo $(MAIN_D_SEQ)
+	@echo All done
+
+# CHAINPOOL.O
+
+CHAINPOOL_O :=  core/ChainPool.o
+
+# SUPERSTRING.O
+
+
+SUPERSTRING_O :=  core/SuperString.o
+
+
+# COMMON.O
+COMMON_O :=  core/Common.o
+
+# BEAM.O
+BEAM_O :=  core/Beam.o
+
+# BLOCK.O
+BLOCK_O :=  core/Block.o
+
+# LINK.O
+LINK_O :=  core/Link.20200718.o
+
+
+# PERIOD.O
+PERIOD_O :=  core/Period.20191126.o
+
+
+# SERIES.O
+SERIES_O :=  core/Series.20200624.o
+
+
+# TABLE.O
+TABLE_O :=  core/Table.20200727.o
+
+
+# TXTSUPERTABLE.O
+
+TXTSUPERTABLE_O :=  core/TXTSuperTable.o
+
+# VARIABLE.O
+
+VARIABLE_O :=  core/Variable.20200709.o
+
+# DATAROLL.O
+
+DATAROLL_O :=  core/DataRoll.o
+
+# TXTDATAROLL.O
+TXTDATAROLL_O :=  core/TXTDataRoll.o
+
+
+# OUTPUT.O
+
+OUTPUT_O :=  core/Output.20200702.o
+
+
+# RECORDTHREAD.O
+
+RECORDTHREAD_O :=  core/RecordThread.o
+
+
+# TANK.O
+
+TANK_O :=  core/Tank.20200710.o
+
+
+# TARGET.O
+
+TARGET_O :=  core/Target.o
+
+
+
+# ErrorHandler.O
+
+ERRORHANDLER_O := core/ErrorHandler.o
+
+
+# EXPRESSPARSER.O
+
+EXPRESSPARSER_O := core/ExpressParser.o
+
+
+# TXTCONVERTER.O
+
+TXTCONVERTER_O :=  core/TXTConverter.o
+
+
+# GeneralMemoryManager.O
+TEMP_OBJ := GeneralMemoryManager
+
+GENERALMEMORYMANAGER_O :=  core/GeneralMemoryManager.o
+
+# SuperLock.O
+TEMP_OBJ := SuperLock
+
+SUPERLOCK_O :=  core/SuperLock.o
+
+# QUICKLIST.O
+
+QUICKLIST_O := core/QuickList.20200803.o
+# SUPERMAP.O
+
+SUPERMAP_O :=  core/SuperMap.20200728.o
+
+
+# VALUEUNION.O
+
+VALUEUNION_O :=  core/ValueUnion.20200713.o
+
+
+# FUNCTIONS.O
+
+FUNCTIONS_O :=  core/Functions.o
+
+#CORE_OBJ := $(wildcard core/*.o)
+
+CORE_OBJ = $(CHAINPOOL_O) $(SUPERSTRING_O) $(BEAM_O) $(BLOCK_O) $(LINK_O) $(PERIOD_O) $(SERIES_O) $(TABLE_O) $(TXTSUPERTABLE_O) $(VARIABLE_O) $(DATAROLL_O) $(TXTDATAROLL_O) $(OUTPUT_O) \
+$(RECORDTHREAD_O) $(TANK_O) $(TARGET_O) $(ERRORHANDLER_O) $(EXPRESSPARSER_O) $(TXTCONVERTER_O) $(SUPERLOCK_O) $(GENERALMEMORYMANAGER_O) $(QUICKLIST_O) $(SUPERMAP_O) $(VALUEUNION_O) $(FUNCTIONS_O) $(COMMON_O)
+
+ifeq ($(OS),Windows_NT)  # is Windows_NT on XP, 2000, 7, Vista, 10...
+	ALL_OBJ := $(MAIN_OBJ) $(MODEL_OBJ) $(CORE_OBJ) $(LIBS)
+	INC_OBJ := $(CORE_INCLUDE_PATH) $(MODEL_INCLUDE_PATH)
+else  # mac and linux
+	ALL_OBJ := $(CORE_OBJ) $(MAIN_OBJ) $(MODEL_OBJ)
+	INC_OBJ := $(CORE_INCLUDE_PATH) $(MODEL_INCLUDE_PATH) $(LIBS)
+endif
+
+
+$(LINK_TARGET): $(ALL_OBJ)
+	@echo linking...
+	@<%= path.cxxPath %> $(CPP_FLAG) -o $@ $^ $(INC_OBJ)
+
+
+make_core: $(CORE_OBJ)
+	@echo All done
+print_core_obj:
+	echo CORE_OBJ := $(CORE_OBJ)

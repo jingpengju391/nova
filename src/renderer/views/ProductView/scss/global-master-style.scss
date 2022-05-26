@@ -1,0 +1,12 @@
+
+.master-box{
+  .el-dialog__body{
+    overflow:hidden !important;
+    height: 80vh !important;
+    display: flex;
+    flex-direction: column;
+  }
+  .el-transfer-panel__filter{
+    width: calc(100% - 30px);
+  }
+}

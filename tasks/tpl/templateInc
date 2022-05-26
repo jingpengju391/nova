@@ -1,0 +1,65 @@
+RELEASE_FOLDER ?= jinShaJiang/release
+RELEASE_CORE_FOLDER := core
+RELEASE_HEADERS_PATH := jinShaJiang
+CORE_DIRS := $(RELEASE_HEADERS_PATH)/Engine/DataStructure/ChainPool \
+$(RELEASE_HEADERS_PATH)/Engine/DataStructure/Exceptions \
+$(RELEASE_HEADERS_PATH)/Engine/DataStructure/ExpressParser \
+$(RELEASE_HEADERS_PATH)/Engine/DataStructure/Files/TXTConverter \
+$(RELEASE_HEADERS_PATH)/Engine/DataStructure/Lock \
+$(RELEASE_HEADERS_PATH)/Engine/DataStructure/MemoryManager \
+$(RELEASE_HEADERS_PATH)/Engine/DataStructure/QuickList \
+$(RELEASE_HEADERS_PATH)/Engine/DataStructure/SmartString \
+$(RELEASE_HEADERS_PATH)/Engine/DataStructure/SuperMap \
+$(RELEASE_HEADERS_PATH)/Engine/DataStructure/Switcher \
+$(RELEASE_HEADERS_PATH)/Engine/DataStructure/ValueUnit \
+$(RELEASE_HEADERS_PATH)/Engine/LogicHolders \
+$(RELEASE_HEADERS_PATH)/Engine/LogicHolders/IPO \
+$(RELEASE_HEADERS_PATH)/Engine/LogicHolders/IPO/DataRoll \
+$(RELEASE_HEADERS_PATH)/Engine/LogicHolders/IPO/DataRoll/TXTDataRoll \
+$(RELEASE_HEADERS_PATH)/Engine/LogicHolders/IPO/Output \
+$(RELEASE_HEADERS_PATH)/Engine/LogicHolders/IPO/RecordThread \
+$(RELEASE_HEADERS_PATH)/Engine/LogicHolders/IPO/Tank \
+$(RELEASE_HEADERS_PATH)/Engine/LogicHolders/IPO/Target \
+$(RELEASE_HEADERS_PATH)/Engine/LogicHolders/Block \
+$(RELEASE_HEADERS_PATH)/Engine/LogicHolders/Block/Link \
+$(RELEASE_HEADERS_PATH)/Engine/LogicHolders/Block/Period \
+$(RELEASE_HEADERS_PATH)/Engine/LogicHolders/Block/Series \
+$(RELEASE_HEADERS_PATH)/Engine/LogicHolders/Block/Variable \
+$(RELEASE_HEADERS_PATH)/Engine/LogicHolders/Block/Table \
+$(RELEASE_HEADERS_PATH)/Engine/LogicHolders/Block/Table/SpecificTables \
+$(RELEASE_HEADERS_PATH)/Global
+
+MODEL_DIRS := jinShaJiang/Model
+
+CORE_INCLUDE_PATH := $(CORE_DIRS)
+CORE_INCLUDE_PATH := $(foreach n,$(CORE_INCLUDE_PATH),-I$(n))
+MODEL_INCLUDE_PATH := $(foreach n,$(MODEL_DIRS) , -I$(n))
+
+
+ifeq ($(OS),Windows_NT)  # is Windows_NT on XP, 2000, 7, Vista, 10...
+		LINK_TARGET = <%= path.modelName%>.exe
+		LIBS := $(RELEASE_HEADERS_PATH)\Engine\LogicHolders\slm_runtime.lib
+		CPP_FLAG ?= -w -std=c++20 -m64 -O3 -DNDEBUG
+		DELETE := -del
+else  # mac and linux
+		LINK_TARGET = <%= path.modelName%>
+		LIBS := -L"./" -lslm_runtime -lslm_control -lss_user_login
+		CPP_FLAG ?= -w -std=c++2a -m64 -O3 -DNDEBUG
+		DELETE := rm -rf
+
+		UNAME_S := $(shell uname -s)
+		ifeq ($(shell uname),Linux)  # -lrt 如果提示无法找到符号 clock_gettime（CentOS6.5 x64），则增加 -lrt 链接库。
+        LIBS += -lm -ldl -lpthread -Wl,-rpath=./:/usr/local/gcc/lib:/usr/local/gcc/lib64
+		endif
+endif
+
+all:$(LINK_TARGET)
+	@echo All done
+#should be different on different system
+.PHONY clean :
+clean:
+	@$(DELETE) $(LINK_TARGET) $(subst /,\,$(wildcard $(RELEASE_FOLDER)/*.d)) $(subst /,\,$(wildcard $(RELEASE_FOLDER)/*.o)) 2>nul
+	@echo Clean done
+
+print_model_obj:
+	echo MODEL_OBJ :=$(MODEL_OBJ)

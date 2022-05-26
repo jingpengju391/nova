@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>模型icon_选中</title>
+    <defs>
+        <linearGradient x1="50%" y1="9.29515775%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#3BD6FF" offset="0%"></stop>
+            <stop stop-color="#3575E6" offset="100%"></stop>
+        </linearGradient>
+        <path d="M20,4.8611809 L20,22.7884892 C20,23.1098014 19.8645015,23.4179535 19.6233127,23.6451556 C19.3821239,23.8723576 19.0550016,24 18.7139091,24 L3.15220886,24 C1.41356894,24.0016724 0.00248438614,22.675672 0,21.0378583 L0,1.21150926 C0,0.542411171 0.575802521,0 1.28609093,0 L14.5662658,0 L20,4.8611809 Z" id="path-2"></path>
+    </defs>
+    <g id="模型icon_选中" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="选择" transform="translate(-0.000000, -0.000000)">
+            <g id="合并形状">
+                <use fill="#AAB5CB" xlink:href="#path-2"></use>
+                <use fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+            </g>
+            <polygon id="路径" fill-opacity="0.5" fill="#FFFFFF" points="19 5 14 5 14 0"></polygon>
+            <polygon id="路径" fill="#FFFFFF" points="10.4314983 15 10.4314983 12.4265315 13 12.4265315 13 11.500207 10.4314983 11.500207 10.4314983 9 9.50393212 9 9.50393212 11.500207 7 11.500207 7 12.4265315 9.50393212 12.4265315 9.50393212 15"></polygon>
+        </g>
+    </g>
+</svg>

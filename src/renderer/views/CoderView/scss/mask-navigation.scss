@@ -1,0 +1,33 @@
+.filter-input {
+  margin: 10px;
+  display: block;
+  width: unset;
+  &:deep(.el-input__wrapper){
+    width: 100%;
+  }
+}
+.classify-dialog {
+  &:deep(.el-dialog__body) {
+    overflow: hidden;
+  }
+  .classify-inner-dialog {
+    &:deep(.el-dialog__body) {
+      overflow: hidden;
+    }
+  }
+  .classifys-list {
+    height: 400px;
+   margin: 30px 0;
+  }
+}
+.classify-inner-dialog {
+  &:deep(.el-dialog__body) {
+    overflow: hidden;
+  }
+}
+.warn-text {
+  color: red;
+}
+
+
+

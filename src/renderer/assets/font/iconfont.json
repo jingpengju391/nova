@@ -1,0 +1,86 @@
+{
+  "id": "2899136",
+  "name": "nova",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "18171090",
+      "name": "轨迹,线路，路径",
+      "font_class": "orbit-full",
+      "unicode": "ea06",
+      "unicode_decimal": 59910
+    },
+    {
+      "icon_id": "22386395",
+      "name": "属性",
+      "font_class": "shuxing",
+      "unicode": "ee2a",
+      "unicode_decimal": 60970
+    },
+    {
+      "icon_id": "15628569",
+      "name": "基础信息",
+      "font_class": "jichuxinxi",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
+      "icon_id": "23023451",
+      "name": "视图设置",
+      "font_class": "shitushezhi",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "16639134",
+      "name": "replace",
+      "font_class": "replace",
+      "unicode": "e663",
+      "unicode_decimal": 58979
+    },
+    {
+      "icon_id": "5387588",
+      "name": "箭头_向下",
+      "font_class": "jiantou_xiangxia",
+      "unicode": "eb0a",
+      "unicode_decimal": 60170
+    },
+    {
+      "icon_id": "5387589",
+      "name": "箭头_向上",
+      "font_class": "jiantou_xiangshang",
+      "unicode": "eb0b",
+      "unicode_decimal": 60171
+    },
+    {
+      "icon_id": "19060603",
+      "name": "git-commit",
+      "font_class": "git-commit",
+      "unicode": "e865",
+      "unicode_decimal": 59493
+    },
+    {
+      "icon_id": "1305479",
+      "name": "刷新",
+      "font_class": "shuaxin",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "16103164",
+      "name": "系统初始化 ",
+      "font_class": "xitongchushihua",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "12898900",
+      "name": "enter",
+      "font_class": "enter",
+      "unicode": "e673",
+      "unicode_decimal": 58995
+    }
+  ]
+}

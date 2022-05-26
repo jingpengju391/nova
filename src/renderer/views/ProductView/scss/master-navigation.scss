@@ -1,0 +1,40 @@
+.master-box{
+  display: flex;
+  width: 100%;
+  height: calc(100% - 80px);
+  .master-navigation{
+    &:deep(.el-tree-node__content){
+      display: flex;
+      align-items: center;
+      background-color: #f4f9fd;
+    }
+    &:deep(.el-tree__empty-block){
+      background-color: #f4f9fd;
+    }
+    .title{
+      display: flex;
+      align-items: center;
+      line-height: 23px;
+      .icon{
+        margin-right: 2px;
+      }
+    }
+    
+  }
+  &:deep(.el-tree--highlight-current .el-tree-node.is-current>.el-tree-node__content){
+    background-color: red;
+    background-color: #CCE9FF;
+    border: 1px solid #3B8BFF;
+    color: black;
+    font-weight: 500;
+  }
+  .scrollbar-box{
+    width: 100%;
+  }
+  &:deep(.el-tree-node__content:hover) {
+    background-color: #CCE9FF;
+    .tree-node > .tool-sets {
+      opacity: 1;
+    }
+  }
+} 

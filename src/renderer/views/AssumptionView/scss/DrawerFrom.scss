@@ -1,0 +1,27 @@
+.drawer-box{
+  &:deep(.el-drawer){
+    padding: 20px;
+    background: #fff;
+    > .el-drawer__header{
+      margin-bottom: 20px;
+    }
+  }
+  &:deep(.el-form-item__label){
+    width: 70px !important;
+  }
+  .con-box{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 160px);
+    padding-bottom: 10px;
+  }
+  .button-group{
+    width: 100%;
+    text-align: center;
+  }
+  .tree-box{
+    margin-top: 10px;
+    max-height: 100%;
+    overflow-y: scroll;
+  }
+}

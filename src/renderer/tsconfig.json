@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "types": ["vite/client", "@types/jest"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "downlevelIteration": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@shared/*": [
+        "../shared/*"
+      ],
+      "@/*": [
+        "./*"
+      ],
+      "@/assets/*": [
+        "./assets/*"
+      ],
+      "@main/*": [
+        "../main/*"
+      ]
+    },
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "./**/*",
+    "./renderer.d.ts",
+    "../shared/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

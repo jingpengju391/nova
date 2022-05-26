@@ -1,0 +1,127 @@
+$border-color: #dcdfe6;
+.top-box {
+  display: flex;
+  width: 100%;
+  .tabs {
+    flex: 1;
+    width: 0;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    flex-flow: column nowrap;
+    &:deep(.el-tabs__content) {
+      padding: 0;
+      flex: 1;
+    }
+    &:deep(.el-tabs__nav-wrap) {
+      padding: 0 40px;
+    }
+    &:deep(.el-tabs__nav-prev) {
+      font-size: 100%;
+      left: 12px;
+    }
+    &:deep(.el-tabs__nav-next) {
+      font-size: 100%;
+      right: 12px;
+    }
+    &:deep(.el-tabs__item:first-child) {
+      margin-left: 0 !important; // fixed the first tab missing left border bug when there are only one or two tabs
+    }
+    &:deep(.el-tabs__item) {
+      padding: 0 !important;
+      border-left: 1px solid $border-color !important;
+      border-right: 1px solid $border-color !important;
+    }
+  }
+  .tab-pane {
+    height: 100%;
+  }
+
+  .tabs-pane-title {
+    width: 120px;
+    height: 33px;
+    font-size: 11px;
+    line-height: 42px; // have to use this height and line-height to make title vertically center
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    padding: 0 24px 0 10px;
+
+    .icon-containers {
+      display: block;
+      position: absolute;
+      height: 14px;
+      width: 14px;
+      top: calc(50% + 3px);
+      transform: translateY(-50%);
+      right: 10px;
+
+      .icon {
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        transform: translateX(50%) translateY(-50%);
+        transition-delay: 0s;
+        transition-timing-function: ease-out;
+        transition-duration: 0.1s;
+      }
+
+      &:hover {
+        .close-icon {
+          z-index: 2;
+        }
+      }
+
+      .close-icon {
+        z-index: 0;
+        height: 100%;
+        width: 100%;
+        line-height: 14px;
+        opacity: 0;
+      }
+      .not-saved-icon {
+        z-index: 1;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        background: tomato;
+      }
+    }
+
+    &:hover .close-icon {
+      opacity: 1;
+    }
+  }
+  .more-btn {
+    width: 40px;
+    height: 40px;
+    background: #f5f7fa;
+    border-bottom: 1px solid #e4e7ed;
+    border-radius: 0;
+    font-size: 20px;
+    color: #606266;
+  }
+  .more-btn:hover {
+    color: #66b1ff;
+  }
+}
+.more-menu {
+  padding: 34px 0;
+}
+.breadcrumb {
+  line-height: 1.5;
+  font-size: 12px;
+  padding: 8px 10px;
+}
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+  button:first-child {
+    margin-right: auto;
+  }
+}
+
+.code-editor-box{
+  width: 100%;
+  height: 100%;
+}

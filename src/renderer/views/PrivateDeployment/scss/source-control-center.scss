@@ -1,0 +1,66 @@
+
+.control-source-center{
+  display: flex;
+  width: 100%;
+  height: calc(100% - 78px);
+  .el-scrollbar{
+    width: 100%;
+    .control-center{
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      .control-center-title-box{
+        display: flex;
+        flex: 1;
+        justify-content: flex-start;
+        align-items: center;
+        padding:0 15px;
+        background: aliceblue;
+        .control-button-group{
+          margin-left: auto;
+          display: flex;
+          align-items: center;
+          i{
+            margin-left: 10px;
+            cursor: pointer;
+          }
+        }
+      }
+      .con-box{
+        padding: 10px;
+      }
+    }
+  }
+  .diff-list{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 5px 15px;
+    align-items: center;
+    cursor: pointer;
+    span{
+      margin-left: 5px;
+    }
+    span:last-child {
+      margin-left: auto;
+      width: 15px;
+      text-align: center;
+    }
+    .path-text{
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      color: #cecece;
+      font-size: 12px;
+    }
+  }
+  .diff-list:hover{
+    background-color: #f5f5f5;
+    transition: .3s;
+  }
+  .through-txt{
+    .name-txt{
+      text-decoration: line-through
+    }
+  }
+}

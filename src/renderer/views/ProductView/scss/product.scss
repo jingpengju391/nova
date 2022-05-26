@@ -1,0 +1,11 @@
+.product-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: calc(100% - 1px);
+  overflow: hidden;
+  .product-main{
+    height: 0px;
+  }
+}

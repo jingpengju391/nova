@@ -1,0 +1,39 @@
+div{
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+  span{
+    color: #1989FA;
+  }
+  em{
+    font-style: normal;
+    color: #5A5E66;
+  }
+  em.check{
+    color: #1989FA;
+  }
+  i{
+    color: #1989FA;
+    font-weight: 500;
+  }
+}
+
+.check-ignore{
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  justify-content: space-between;
+  .turnoff{
+    width: auto;
+  }
+}
+
+.scrollbar-box{
+  &:deep(.el-scrollbar__wrap){
+    width: 100%;
+  }
+}

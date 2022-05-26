@@ -1,0 +1,31 @@
+.tool-box{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 20px;
+  color: #606266;
+  margin: 10px 0;
+  h5{
+    margin: 0;
+    border: 0;
+  }
+  i{
+    margin-left: 5px;
+  }
+  i:nth-child(2){
+    margin-left: auto;
+  }
+  .tool-bar{
+    margin-right: 8px;
+    cursor: pointer;
+  }
+  .tool-bar:hover{
+    color: #66b1ff;
+  }
+  .tool-bar:last-child{
+    margin: 0;
+  }
+  .active{
+    color: #66b1ff;
+  }
+}

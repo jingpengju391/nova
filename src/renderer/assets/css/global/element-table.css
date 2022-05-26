@@ -1,0 +1,9 @@
+.sl-menu-table{
+  font-size: 13px;
+  --el-table-current-row-bg-color: #CCE9FF;
+  --el-table-bg-color: #f4f9fd;
+  --el-table-tr-bg-color: #f4f9fd;
+  --el-table-header-bg-color: #f4f9fd;
+  --el-bg-color: #f4f9fd;
+  --el-table-row-hover-bg-color:#CCE9FF;
+}

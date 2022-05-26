@@ -1,0 +1,120 @@
+.bar-box{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 4px;
+  background-color: #f3f3f3;
+  .left-box{
+    display: flex;
+    width: 18px;
+  }
+  .right-box{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    .find-part ,.replace-part{
+      display: flex;
+      align-items: center;
+      .replace-input{
+        display: flex;
+        flex: 1;
+        align-items: center;
+        background: #fff;
+        padding-right: 4px;
+      }
+    }
+    .find-part{
+      background: #fff;
+      padding-right: 4px;
+      margin-bottom: 4px;
+    }
+    .replace-actions{
+      display: flex;
+    }
+  }
+  .controls{
+    display: flex;
+    align-items: center;
+    .monaco-custom-checkbox{
+      font: normal normal normal 16px/1 codicon;
+      display: inline-block;
+      text-decoration: none;
+      text-rendering: auto;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      width: 20px;
+    }
+    .codicon[class*='codicon-']{
+      font: normal normal normal 16px/1 codicon;
+      display: inline-block;
+      text-decoration: none;
+      text-rendering: auto;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+    .disabled{
+      opacity: 0.3;
+      cursor: default;
+    }
+    .monaco-custom-checkbox:hover, .monaco-custom-checkbox.checked{
+      opacity: 1;
+    }
+  }
+  .codicon-case-sensitive::before{
+    content: '\eab1';
+  }
+  .codicon-whole-word:before{
+    content: '\eb7e';
+  }
+  .codicon-regex:before{
+    content: '\eb38';
+  }
+  .codicon-preserve-case:before{
+    content: '\eb2e';
+  }
+  .disabled{
+    opacity: 0.3;
+    cursor: default;
+  }
+  .button{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex: initial;
+    margin-left: 3px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .codicon-find-replace:before {
+    content: '\eb3d';
+  }
+  .codicon-find-replace-all:before {
+    content: '\eb3c';
+  }
+  &:deep(.el-input__inner){
+    border-width: 0px;
+  }
+  .replace-show{
+    i{
+      transform: rotate(90deg);
+    }
+  }
+  .codicon-find-replace-all:hover{
+    background: #0090f133;
+  }
+  .disabled:hover{
+    background: transparent;
+  }
+}
